@@ -36,7 +36,7 @@ const Welcome = () => {
           <TextInput
             style={styles.searchInput}
             value=""
-            placeholder="What are you looking for?"
+            placeholder="Search jobs"
             placeholderTextColor={COLORS.gray}
             onChange={() => {}}
           />

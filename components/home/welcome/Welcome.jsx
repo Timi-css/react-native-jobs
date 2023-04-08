@@ -21,7 +21,7 @@ const jobTypes = [
   "Apprenticeship",
 ];
 
-const Welcome = () => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter();
   const [activJobType, setActiveJobtype] = useState("Full-time");
   return (
@@ -35,13 +35,13 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=""
+            value={searchTerm}
             placeholder="Search jobs"
             placeholderTextColor={COLORS.gray}
-            onChange={() => {}}
+            onChangeText={(text) => setSearchTerm(text)}
           />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image
             source={icons.search}
             resizeMode="contain"
